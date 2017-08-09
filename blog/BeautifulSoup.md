@@ -1,6 +1,8 @@
-<a href="../README.md" name="top"><<返回目录</a>
+<a href="index.md" name="top"><<返回目录</a>
 
 # Beautiful Soup
+
+>`BeautiSoup`-借助网页的结构和属性等特性来解析网页的工具，有了它我们不用再去写一些复杂的正则，只需要简单的几条语句就可以完成网页中某个元素的提取。
 
 ### 一. 文档
 
@@ -70,10 +72,12 @@ d = soup.select("div[class='a b']") # div class='a b'
 
 ##### 2. 解析器
 
-![解析器](../img/jiexiqi.png)
+![解析器](img/jiexiqi.png)
 
 ##### 3. 实例
 `requests + beautifulsoup + lxml + re` 可以完成很多数据抓取任务。
+
+**requests使用**   
 
 访问一些网站可能有被服务器拒绝的情况，因此可以尝试模拟浏览器访问的方式：
 
@@ -81,6 +85,14 @@ d = soup.select("div[class='a b']") # div class='a b'
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
                         'Chrome/51.0.2704.63 Safari/xixi234'}
     r = requests.get("http://127.0.0.1:8000/", headers=headers)
+```
+
+一些网站编码格式不是utf-8，text可能出现乱码，解决方法如下：
+
+```python
+url = "http://weibo.com/u/1951466385?is_all=1"
+r = requests.get(url)
+text = r.text.encode(r.encoding).decode("gb2312")
 ```
 
 

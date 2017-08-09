@@ -1,4 +1,4 @@
-<a href="../README.md" name="top"><<返回目录</a>
+<a href="index.md" name="top"><<返回目录</a>
 
 # PySpider
 
@@ -22,7 +22,7 @@
 
 `pyspider`的架构主要分为 `scheduler`（调度器）, `fetcher`（抓取器）, `processor`（脚本执行）：
 
-![](../img/pyspider1.png)
+![](img/pyspider1.png)
 
 * 各个组件间使用消息队列连接，除了scheduler是单点的，fetcher 和 processor 都是可以多实例分布式部署的。 scheduler 负责整体的调度控制
 * 任务由 scheduler 发起调度，fetcher 抓取网页内容， processor 执行预先编写的python脚本，输出结果或产生新的提链任务（发往 scheduler），形成闭环。
@@ -43,7 +43,7 @@ pyspider
 然后，访问<http://localhost:5000/>访问控制台。如下图：
 
 
-![pyspider](../img/pyspider.png)
+![pyspider](img/pyspider.png)
 
 **关于项目（Project）**
 
@@ -62,7 +62,6 @@ pyspider
 
 ### 3. 用法
 
-**简单Demo**
 
 ```python
 # -*- encoding: utf-8 -*-
@@ -119,7 +118,13 @@ class Handler(BaseHandler):
 
 **运行结果**
 
-![](../img/pyspider_demo1.png)
+![](img/pyspider_demo1.png)
+
+### 4. 实例
+
+##### [Demo 1](https://github.com/JHFighting/python_spider/blob/master/PySpider/taobao_pic.py)
+
+获取淘宝模特资料，图片
 
 
 

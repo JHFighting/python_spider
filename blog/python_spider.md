@@ -1,4 +1,4 @@
-<a href="../README.md" name="top"><<返回目录</a>
+<a href="index.md" name="top"><<返回目录</a>
 
 # 二. Python爬虫学习
 
@@ -29,7 +29,7 @@ pyquery库是jQuery的Python实现，可以用于解析HTML网页内容。
 
 ### 4. 学习资料
 
-<http://www.jianshu.com/p/047b4dd3f911>
+<http://www.jianshu.com/p/047b4dd3f911>   
 <http://www.jianshu.com/p/0bfd0c48457f>
 
 书籍：   
