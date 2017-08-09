@@ -2,13 +2,13 @@
 
 # Beautiful Soup
 
->`BeautiSoup`-借助网页的结构和属性等特性来解析网页的工具，有了它我们不用再去写一些复杂的正则，只需要简单的几条语句就可以完成网页中某个元素的提取。
+>`Beautiful Soup`-借助网页的结构和属性等特性来解析网页的工具，有了它我们不用再去写一些复杂的正则，只需要简单的几条语句就可以完成网页中某个元素的提取。
 
 ### 一. 文档
 
 [官方文档](https://www.crummy.com/software/BeautifulSoup/)
 
-[中文文档](https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html)
+[中文使用文档](https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html)
 
 ### 二. 安装
 
@@ -105,7 +105,7 @@ text = r.text.encode(r.encoding).decode("gb2312")
 
 获取腾讯体育首页资讯
 
---
+---
 
 
 **插件推荐：[SelectorGadget](http://selectorgadget.com/)**

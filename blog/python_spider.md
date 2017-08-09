@@ -1,11 +1,11 @@
 <a href="index.md" name="top"><<返回目录</a>
 
-# 二. Python爬虫学习
+# Python爬虫学习
 
 ### 1. 网络
 
 * [urllib](https://docs.python.org/3.4/library/urllib.html?highlight=urllib#module-urllib) - python自带网络库(stdlib)
-* [requests](https://github.com/requests/requests) - 第三方网络库
+* [requests](http://docs.python-requests.org/en/master/) - 第三方网络库
 
 ### 2. 主流框架
 
@@ -15,7 +15,7 @@
 #### [pyspider](https://github.com/binux/pyspider)
 一个国人编写的强大的网络爬虫系统并带有强大的WebUI。采用Python语言编写，分布式架构，支持多种数据库后端，强大的WebUI支持脚本编辑器，任务监视器，项目管理器以及结果查看器。
 
-### 3. HTML/XML解析器
+### 3. HTML/XML解析
 
 #### [lxml](http://lxml.de/)
 C语言编写高效HTML/ XML处理库。支持XPath。
