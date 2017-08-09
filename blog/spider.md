@@ -47,7 +47,7 @@
 这种策略认为，网页具有很多属性，类似属性的网页，可以认为其更新频率也是类似的。要计算某一个类别网页的更新频率，只需要对这一类网页抽样，以他们的更新周期作为整个类别的更新周期。
 
 ### 5. Robots协议
-Robots协议（Robots Exclusion Standard，网络爬虫排除标准）：    
+[Robots协议](http://www.robotstxt.org/robotstxt.html)（Robots Exclusion Standard，网络爬虫排除标准）：    
 
 *   作用：网站告知网络爬虫哪些页面可以爬取，哪些不行。   
 *   形式：在网站根目录下的robots.txt文件。

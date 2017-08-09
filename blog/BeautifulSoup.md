@@ -23,7 +23,7 @@ lxml是beautifulsoup的一个依赖库，解析更加强大，速度更快。
 
 ### 三. 用法
 
-##### 1. 基本用法
+#### 1. 基本用法
 
 ```python
 #coding=utf-8
@@ -71,11 +71,11 @@ e = soup.select("div p[class='c'])	# div 标签内 class=c 子标签为p 或子
 
 ```
 
-##### 2. 解析器
+#### 2. 解析器
 
 ![解析器](img/jiexiqi.png)
 
-##### 3. 实例
+#### 3. 实例
 `requests + beautifulsoup + lxml + re` 可以完成很多数据抓取任务。
 
 **requests使用**   
@@ -97,9 +97,9 @@ text = r.text.encode(r.encoding).decode("gb2312")
 ```
 
 
-[Demo 1](https://github.com/JHFighting/python_spider/blob/master/BeautifulSoup/mybeijing_portal.py)   
+[Demo 1](https://github.com/JHFighting/python_spider/blob/master/BeautifulSoup/demo_2.py)
 
-抓取mybeijing portal各个链接
+抓取某url各个链接
 
 [Demo 2](https://github.com/JHFighting/python_spider/blob/master/BeautifulSoup/sport.py)
 

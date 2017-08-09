@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 def test():
     queue = deque()
     visited = set()
-    baseUrl = "http://219.237.93.162"
+    baseUrl = "http://"
     url = baseUrl
     queue.append(url)
     cnt = 0

@@ -6,6 +6,8 @@
 
 [PySpider](http://docs.pyspider.org/en/latest/)
 
+[快速入门-中文手册](http://www.pyspider.cn/book/pyspider/pyspider-Quickstart-2.html)
+
 >一个国人编写的强大的网络爬虫系统并带有强大的WebUI。采用Python语言编写，分布式架构，支持多种数据库后端，强大的WebUI支持脚本编辑器，任务监视器，项目管理器以及结果查看器。	
 
 **主要特点**
@@ -28,7 +30,6 @@
 * 任务由 scheduler 发起调度，fetcher 抓取网页内容， processor 执行预先编写的python脚本，输出结果或产生新的提链任务（发往 scheduler），形成闭环。
 * 每个脚本可以灵活使用各种python库对页面进行解析，使用框架API控制下一步抓取动作，通过设置回调控制解析动作。
 
-
 ### 2. 安装运行
 
 ```shell
@@ -50,7 +51,7 @@ pyspider
 大多数情况下，一个项目就是你针对一个网站写的一个爬虫脚本。
 
 * 项目是相对独立的但是你可以导入其它项目或其它项目的模块．
-* 项目有五个状态:TODO,STOP,CHECKING,DEBUG,RUNNING
+* 项目有五个状态:TODO,STOP,CHECKING,DEBUG,RUNNING   
 `TODO`- 当一个脚本刚刚被创建时的状态   
 `STOP`- 你可以设置项目状态为STOP让项目停止运行   
 `CHECKING`- 当一个运行中的项目被编辑时项目状态会被自动设置成此状态并停止运行．   
