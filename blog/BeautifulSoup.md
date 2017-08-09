@@ -67,6 +67,7 @@ a = soup.select("div")	# 所有div标签
 b = soup.select("div.a") # 所有div中class有"a"的标签
 c = soup.select("div .a")	# div标签内class为"a"的子标签
 d = soup.select("div[class='a b']") # div class='a b'
+e = soup.select("div p[class='c'])	# div 标签内 class=c 子标签为p 或子标签的子标签为p
 
 ```
 
@@ -79,7 +80,7 @@ d = soup.select("div[class='a b']") # div class='a b'
 
 **requests使用**   
 
-访问一些网站可能有被服务器拒绝的情况，因此可以尝试模拟浏览器访问的方式：
+访问一些网站可能有被服务器拒绝的情况，因此可以尝试模拟浏览器访问的方式。浏览器伪装是防屏蔽的方法之一，简言之，其原理就是在客户端在向服务端发送的请求中添加报头信息，告诉服务器“我是浏览器”。
 
 ```python
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -104,7 +105,14 @@ text = r.text.encode(r.encoding).decode("gb2312")
 
 获取腾讯体育首页资讯
 
+--
 
+
+**插件推荐：[SelectorGadget](http://selectorgadget.com/)**
+
+这是一个chrome插件，安装后点击使用，然后直接在你要爬取的网页上选择你要爬取的内容，这时一系列内容会被标黄，这时你所需要的选择器内容就在下方显示出来了，如下图，黄色的标题就被选中，最下面框内即为自动生成的选择器内容。
+
+![](img/selectorgadget.png)
 
 
  [返回顶部](#top)

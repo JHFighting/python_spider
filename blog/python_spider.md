@@ -29,9 +29,6 @@ pyquery库是jQuery的Python实现，可以用于解析HTML网页内容。
 
 ### 4. 学习资料
 
-<http://www.jianshu.com/p/047b4dd3f911>   
-<http://www.jianshu.com/p/0bfd0c48457f>
-
 书籍：   
 《Python网络数据采集》    [点击下载](https://pan.baidu.com/s/1boUkemz)	  提取密码：mhgg
 

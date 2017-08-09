@@ -2,6 +2,6 @@
 
 ### [1. 网络爬虫基础](spider.md)
 ### [2. Python爬虫学习](python_spider.md)
-#### [2.1 Beautiful Soup](BeautifulSoup.md)
-#### [2.2 PyQuery](PyQuery.md)
-#### [2.3 PySpider](pyspider.md)
+### [3 Beautiful Soup](BeautifulSoup.md)
+### [4 PyQuery](PyQuery.md)
+### [5 PySpider](pyspider.md)

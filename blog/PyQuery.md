@@ -83,7 +83,7 @@ a = """<p class='a b' xixi='123'>haha</p>
 <div class='a b'>xixi</div>"""
 
 pq = pyquery.PyQuery(a)
-print(pq("div.a > span").text())	#	没有输出
+print(pq("div.a > span").text())	#	div class=a的span 子标签, 没输出
 print(pq("div.a span").text())	# 	输出：span
 print(pq('div[class="a b"]').text())	# 输出： xixi
 
