@@ -12,7 +12,7 @@
 
 安装bs4以及lxml:   
 
-```shell
+```sh
 pip install beautifulsoup4
 pip install lxml
 
@@ -78,7 +78,8 @@ d = soup.select("div[class='a b']") # div class='a b'
 访问一些网站可能有被服务器拒绝的情况，因此可以尝试模拟浏览器访问的方式：
 
 ```python
-    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) 'Chrome/51.0.2704.63 Safari/xixi234'}
+    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                        'Chrome/51.0.2704.63 Safari/xixi234'}
     r = requests.get("http://127.0.0.1:8000/", headers=headers)
 ```
 
