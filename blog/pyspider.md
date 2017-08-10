@@ -138,6 +138,9 @@ class Handler(BaseHandler):
 
 获取淘宝模特资料，图片
 
+##### [Demo 3](https://github.com/JHFighting/python_spider/blob/master/PySpider/nba_player.py)
+
+获取腾讯nba所有球队的球员列表，并写到excel
 
 
  [返回顶部](#top)

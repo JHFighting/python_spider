@@ -23,6 +23,7 @@ result = []
 
 for li in pq_li:
     li_tag = pq(li)
+    li_tag.siblings()
     title = li_tag('.title').text()
     href = li_tag('.title').attr('href')
     raw_href = 'http://www.jianshu.com' + href

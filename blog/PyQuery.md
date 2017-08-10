@@ -183,6 +183,8 @@ d('p:last').nextAll()#返回[<img>]
 d = pq("<p id='1'>test 1</p><p id='2'>test 2</p>")
 d('p').not_('#2')#返回[<p#1>]
 
+#17.siblings(selector=None) -- 返回兄弟节点
+
 ```
 
 ### 4. 实例

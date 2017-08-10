@@ -5,7 +5,6 @@
 
 from pyspider.libs.base_handler import *
 
-
 class Handler(BaseHandler):
     crawl_config = {
     }
@@ -18,8 +17,10 @@ class Handler(BaseHandler):
     def index_page(self, response):
         a = []
         for each in response.doc('li[class^="fore"]').items():
-            name = each('div[class="p-name"]').text()
-            price = each('div[class="p-price"]').text()
+            name_div = each('div[class="p-name"]')
+            price_div = name_div.siblings(".p-price")
+            name = name_div.text()
+            price = price_div.text()
             if name and price:
                 a.append({"name": name, "price": price})
         return a
