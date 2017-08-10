@@ -19,6 +19,12 @@
 * 强大的调度控制，支持超时重爬及优先级设置
 * 多任务并行，健全的任务管理机制
 
+**scrapy & pyspider**
+
+`scrapy`是封装了twisted的一个爬虫框架，项目结构比较清晰，其中Item Pipeline决定了数据传输跟保存的结构，而爬虫的核心部分在spider目录下，而爬虫也只需要关系核心的解析规则编写。scrapy框架搭了一个架子，在这框架中其实需要实现的核心功能还是要很多的，但是不需要关心中间件层面的东西了。另外scrapy很方便扩展，因此，是一个很不错的轮子了。   
+
+`pyspider`，这个框架封装了tornado，以及集成了一系列工具，比如lxml, css-selector-help，pyquery，phantomjs等，而且开放的api也相当精简，相当于说，pyspider就是针对新手量身定做的一个框架，类似于scrapy中中间件的东西，这边已经帮你集成好了，所有需要关心的就是你的爬虫规则，甚至爬虫规则都支持单步调试编写，门槛几乎为0了。
+
 
 **架构**
 
@@ -123,7 +129,10 @@ class Handler(BaseHandler):
 
 ### 4. 实例
 
-##### [Demo 1](https://github.com/JHFighting/python_spider/blob/master/PySpider/taobao_pic.py)
+##### [Demo 1]()
+
+
+##### [Demo 2](https://github.com/JHFighting/python_spider/blob/master/PySpider/taobao_pic.py)
 
 获取淘宝模特资料，图片
 
