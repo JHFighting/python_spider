@@ -67,7 +67,7 @@ a = soup.select("div")	# 所有div标签
 b = soup.select("div.a") # 所有div中class有"a"的标签
 c = soup.select("div .a")	# div标签内class为"a"的子标签
 d = soup.select("div[class='a b']") # div class='a b'
-e = soup.select("div p[class='c'])	# div 标签内 class=c 子标签为p 或子标签的子标签为p
+e = soup.select("div p[class='c'])	# div 标签内 class=c 子标签为 p 或子标签的子标签为p
 
 ```
 
