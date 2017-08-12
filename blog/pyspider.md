@@ -1,4 +1,4 @@
-<a href="index.md" name="top"><<返回目录</a>
+<a href="../README.md" name="top"><<返回目录</a>
 
 # PySpider
 
@@ -119,7 +119,7 @@ class Handler(BaseHandler):
 
 **`def detail_page(self, response)`**   
 
-返回一个结果集对象。这个结果默认会被添加到resultdb数据库（如果启动时没有指定数据库默认调用sqlite数据库）。你也可以重写`on_result(self,result)`方法来指定保存位置。
+返回一个结果集对象。这个结果默认会被添加到`resultdb`数据库（如果启动时没有指定数据库默认调用sqlite数据库）。你也可以重写`on_result(self,result)`方法来指定保存位置。
 
 更多知识：   
 `@every(minutes=24*60, seconds=0)` 这个设置是告诉scheduler（调度器）`on_start`方法每天执行一次。
