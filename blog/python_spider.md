@@ -12,7 +12,7 @@
 #### [Scrapy](https://scrapy.org/)
 `Scrapy`是一个为了爬取网站数据，提取结构性数据而编写的应用框架。 可以应用在包括数据挖掘，信息处理或存储历史数据等一系列的程序中。
 
-#### [pyspider](https://github.com/binux/pyspider)
+#### [PySpider](https://github.com/binux/pyspider)
 一个国人编写的强大的网络爬虫系统并带有强大的WebUI。采用Python语言编写，分布式架构，支持多种数据库后端，强大的WebUI支持脚本编辑器，任务监视器，项目管理器以及结果查看器。
 
 ### 3. HTML/XML解析
@@ -25,7 +25,7 @@ Beautiful Soup 是一个可以从HTML或XML文件中提取数据的Python库。
 
 #### [PyQuery](http://packages.python.org/pyquery/)
 
-pyquery库是jQuery的Python实现，可以用于解析HTML网页内容。
+PyQuery库是jQuery的Python实现，可以用于解析HTML网页内容。
 
 ### 4. 学习资料
 

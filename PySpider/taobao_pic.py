@@ -5,7 +5,7 @@
 
 from pyspider.libs.base_handler import *
 
-DIR_PATH = '/Users/icity/Desktop/taobao'
+DIR_PATH = '/Users/jh/Desktop/taobao'
 
 class Handler(BaseHandler):
     crawl_config = {
