@@ -30,6 +30,7 @@
 
 #### 架构
 
+
 `pyspider`的架构主要分为 `scheduler`（调度器）, `fetcher`（抓取器）, `processor`（脚本执行）：
 
 ![](img/pyspider1.png)
