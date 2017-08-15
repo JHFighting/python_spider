@@ -43,21 +43,34 @@
 
 ### 2. 安装运行
 
+#### 安装
+
 ```shell
 pip install pyspider
 ```
+
+pip安装，会自动安装pyspider的依赖库，如`lxml`,`pyquery`等，但`phantomjs`需要单独安装。
+
+`phantomjs` 安装：   
+
+1. 下载地址：<http://phantomjs.org/download.html>   
+2. 选取系统对应版本下载，这里介绍linux下安装，解压：   
+
+	```
+	tar -jxvf phantomjs-2.1.1-linux-x86_64.tar.bz2
+	```
+3. 为phantomjs下的bin目录配置环境变量。
+
 安装成功后，执行：
 
 ```shell
-pyspider all
+pyspider
 ```
-
 然后，访问<http://localhost:5000/>访问控制台。如下图：
-
 
 ![pyspider](img/pyspider.png)
 
-**关于项目（Project）**
+#### 关于项目（Project）
 
 大多数情况下，一个项目就是你针对一个网站写的一个爬虫脚本。
 
@@ -73,13 +86,11 @@ pyspider all
 如：`rate/burst = 0.1/3`,这个的意思是爬虫10秒爬一个页面．但是开始时前三个任务会同时时行，不会等10秒，第四个任务爬取前会等10秒。      
 * 项目删除：把group设置成delete并把项目状态设置成STOP，24小时后系统会自动删除此项目．
 
-### 3. 用法
-
+### 3. 基本用法
 
 ```python
 # -*- encoding: utf-8 -*-
 from pyspider.libs.base_handler import *
-
 
 class Handler(BaseHandler):
     crawl_config = {
@@ -133,7 +144,39 @@ class Handler(BaseHandler):
 
 ![](img/pyspider_demo1.png)
 
-### 4. 实例
+
+### 4. 配置
+`pyspider`命令执行后，在当前目录会自动生成`data`目录：
+
+![](img/pyspider_data.png)
+
+* `project.db`: 存储脚本数据
+* `result.db`: 存储采集到的数据
+* `task.db`: 任务采集过程数据
+
+`pyspider`默认通过sqlite链接数据库，存储数据，下面配置可以结果存储在mysql中。   
+创建`config.json`： 
+
+```
+{
+    "taskdb": "mysql+taskdb://username:password@ip:port/taskdb",
+    "projectdb": "mysql+projectdb://username:password@ip:port/projectdb",
+    "resultdb": "mysql+resultdb://username:password@ip:port/resultdb",
+    "webui": {
+        "username": "test",
+        "password": "test",
+        "need-auth": true
+    }
+}
+```
+
+启动：
+
+```
+pyspider -c config.json
+```
+
+### 5. 实例
 
 ##### [Demo 1](https://github.com/JHFighting/python_spider/blob/master/PySpider/jingdong_phone.py) 
 

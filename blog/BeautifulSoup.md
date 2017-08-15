@@ -78,24 +78,6 @@ e = soup.select("div p[class='c'])	# div 标签内 class=c 子标签为 p 或�
 #### 3. 实例
 `requests + beautifulsoup + lxml + re` 可以完成很多数据抓取任务。
 
-**requests使用**   
-
-访问一些网站可能有被服务器拒绝的情况，因此可以尝试模拟浏览器访问的方式。浏览器伪装是防屏蔽的方法之一，简言之，其原理就是在客户端在向服务端发送的请求中添加报头信息，告诉服务器“我是浏览器”。
-
-```python
-    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
-                        'Chrome/51.0.2704.63 Safari/xixi234'}
-    r = requests.get("http://127.0.0.1:8000/", headers=headers)
-```
-
-一些网站编码格式不是utf-8，text可能出现乱码，解决方法如下：
-
-```python
-url = "http://weibo.com/u/1951466385?is_all=1"
-r = requests.get(url)
-text = r.text.encode(r.encoding).decode("gb2312")
-```
-
 
 [Demo 1](https://github.com/JHFighting/python_spider/blob/master/BeautifulSoup/demo_2.py)
 

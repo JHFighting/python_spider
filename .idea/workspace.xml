@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a0d54db-3636-4901-a457-3542046cc3e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PySpider/douban_movie_phantomjs.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PyQuery/baidu_dota.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Spider/qiushi_baike.py" afterPath="$PROJECT_DIR$/Spider/qiushi_baike.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/pyspider.md" afterPath="$PROJECT_DIR$/blog/pyspider.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/python_spider.md" afterPath="$PROJECT_DIR$/blog/python_spider.md" />
-    </list>
+    <list default="true" id="0a0d54db-3636-4901-a457-3542046cc3e0" name="Default" comment="" />
     <ignored path="python_spider.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
