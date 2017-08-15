@@ -28,8 +28,7 @@
 `pyspider`，这个框架封装了tornado，以及集成了一系列工具，比如lxml, css-selector-help，pyquery，phantomjs等，而且开放的api也相当精简，相当于说，pyspider就是针对新手量身定做的一个框架，类似于scrapy中中间件的东西，这边已经帮你集成好了，所有需要关心的就是你的爬虫规则，甚至爬虫规则都支持单步调试编写，门槛几乎为0了。
 
 
-### 1.3 架构
-
+### 1.3 架构
 
 `pyspider`的架构主要分为 `scheduler`（调度器）, `fetcher`（抓取器）, `processor`（脚本执行）：
 
