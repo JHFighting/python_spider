@@ -2,7 +2,7 @@
 
 # PySpider
 
-### 1. 概念
+## 1. 概念
 
 [PySpider](http://docs.pyspider.org/en/latest/)
 
@@ -10,7 +10,7 @@
 
 >一个国人编写的强大的网络爬虫系统并带有强大的WebUI。采用Python语言编写，分布式架构，支持多种数据库后端，强大的WebUI支持脚本编辑器，任务监视器，项目管理器以及结果查看器。	
 
-**主要特点**
+#### 主要特点
 
 * python 脚本控制，可以用任何你喜欢的html解析包（内置 pyquery）
 * WEB 界面编写调试脚本，起停脚本，监控执行状态，查看活动历史，获取结果产出
@@ -21,14 +21,14 @@
 
 
 
-**scrapy & pyspider**
+#### scrapy & pyspider
 
 `scrapy`是封装了twisted的一个爬虫框架，项目结构比较清晰，其中Item Pipeline决定了数据传输跟保存的结构，而爬虫的核心部分在spider目录下，而爬虫也只需要关系核心的解析规则编写。scrapy框架搭了一个架子，在这框架中其实需要实现的核心功能还是要很多的，但是不需要关心中间件层面的东西了。另外scrapy很方便扩展，因此，是一个很不错的轮子了。   
 
 `pyspider`，这个框架封装了tornado，以及集成了一系列工具，比如lxml, css-selector-help，pyquery，phantomjs等，而且开放的api也相当精简，相当于说，pyspider就是针对新手量身定做的一个框架，类似于scrapy中中间件的东西，这边已经帮你集成好了，所有需要关心的就是你的爬虫规则，甚至爬虫规则都支持单步调试编写，门槛几乎为0了。
 
 
-**架构**
+#### 架构
 
 `pyspider`的架构主要分为 `scheduler`（调度器）, `fetcher`（抓取器）, `processor`（脚本执行）：
 
@@ -41,9 +41,9 @@
 	> output部分设计尚未决定，因为希望输出也可以很灵活地进行。现在是在脚本中有一个`on_result`的回调，在里面可以自行实现结果输出。
 
 
-### 2. 安装运行
+## 2. 安装运行
 
-#### 安装
+### 2.1 安装
 
 ```shell
 pip install pyspider
@@ -70,7 +70,7 @@ pyspider
 
 ![pyspider](img/pyspider.png)
 
-#### 关于项目（Project）
+### 2.2 关于项目（Project）
 
 大多数情况下，一个项目就是你针对一个网站写的一个爬虫脚本。
 
@@ -86,7 +86,9 @@ pyspider
 如：`rate/burst = 0.1/3`,这个的意思是爬虫10秒爬一个页面．但是开始时前三个任务会同时时行，不会等10秒，第四个任务爬取前会等10秒。      
 * 项目删除：把group设置成delete并把项目状态设置成STOP，24小时后系统会自动删除此项目．
 
-### 3. 基本用法
+## 3. 基本用法
+
+实例：
 
 ```python
 # -*- encoding: utf-8 -*-
@@ -145,7 +147,10 @@ class Handler(BaseHandler):
 ![](img/pyspider_demo1.png)
 
 
-### 4. 配置
+## 4. 单机部署
+
+### 4.1 pyspider配置
+
 `pyspider`命令执行后，在当前目录会自动生成`data`目录：
 
 ![](img/pyspider_data.png)
@@ -163,6 +168,7 @@ class Handler(BaseHandler):
     "projectdb": "mysql+projectdb://username:password@ip:port/projectdb",
     "resultdb": "mysql+resultdb://username:password@ip:port/resultdb",
     "webui": {
+        "port": 8888,
         "username": "test",
         "password": "test",
         "need-auth": true
@@ -176,7 +182,93 @@ class Handler(BaseHandler):
 pyspider -c config.json
 ```
 
-### 5. 实例
+更多配置选项查看：
+
+```
+pyspider --help 
+pyspider webui --help
+```
+
+### 4.2 supervisor管理
+
+[supervisor](http://supervisord.org)是一个用python写的进程管理工具，可以很方便的用来启动、重启、关闭进程。除了对单一进程的控制，还可以同时启动、关闭多个进程，对程序进行监控，当程序退出时，可以自动拉起程序。
+
+#### 4.2.1 安装配置
+
+通过`easy_install`安装：
+
+```
+yum install python-setuptools
+easy_install supervisor
+```
+
+通过`pip`安装：
+
+```
+pip install supervisor
+```
+生成配置文件：
+
+```
+mkdir /etc/supervisor
+mkdir /etc/supervisor/conf
+```
+找到`echo_supervisord_conf`文件，默认在`/usr/bin`下，运行以下命令，输出默认配置项，并重定向到指定配置文件中：
+
+```
+/usr/bin/echo_supervisord_conf > /etc/supervisor/supervisord.conf
+```
+
+修改`supervisord.conf `:
+
+```                                                              
+[include]                                                                                        
+files = /etc/supervisor/conf/*.conf
+```
+
+在`/etc/supervisor/conf`下，配置需要管理的进程，可以统一配置，也可以每个进程单独配置，方便管理，下面是`pyspider.conf`的基本配置：
+
+```
+[program:pyspider]                                                                               
+command=/usr/local/bin/pyspider -c /home/pyspider/pyspider/config.json                                 
+autorestart=true                                                                                 
+autostart=true                                                                                   
+user=pyspider                                                                                          
+group=pyspider                                                                                         
+directory=/home/pyspider/pyspider                                                                      
+stderr_logfile=/home/pyspider/pyspider/logs/pyspider_err.log                                           
+stdout_logfile=/home/pyspider/pyspider/logs/pyspider.log                                               
+```
+
+注释：
+
+* `command `: 启动程序的命令
+* `autorestart `: 程序异常退出后自动重启
+* `autostart`: 在supervisord启动时自动启动
+* `user`, `group`: 开启进程的用户和组
+* `stderr_logfile `: 错误日志输出
+* `stdout_logfile `: 标准日志输出
+
+#### 4.2.2 启动
+
+```
+supervisord -c /etc/supervisor/supervisord.conf
+```
+
+查看业务进程是否被拉起：
+
+```
+supervisorctl status
+```
+
+停止supervisor（子进程也会被停止，也可以针对单个程序进行start，update，restart，stop操作）：
+
+```
+supervisorctl shutdown
+supervisorctl stop pyspider
+```
+
+## 5. 实例
 
 ##### [Demo 1](https://github.com/JHFighting/python_spider/blob/master/PySpider/jingdong_phone.py) 
 
