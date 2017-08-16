@@ -148,7 +148,11 @@ class Handler(BaseHandler):
 ![](img/pyspider_demo1.png)
 
 
-## 4. 单机部署
+## 4. 部署
+
+>`mysql`: 存储数据   
+`redis`: 消息队列   
+`supervisor`: 进程管理   
 
 ### 4.1 pyspider配置
 
@@ -163,11 +167,12 @@ class Handler(BaseHandler):
 `pyspider`默认通过sqlite链接数据库，存储数据，下面配置可以结果存储在mysql中。   
 创建`config.json`： 
 
-```
+```json
 {
     "taskdb": "mysql+taskdb://username:password@ip:port/taskdb",
     "projectdb": "mysql+projectdb://username:password@ip:port/projectdb",
     "resultdb": "mysql+resultdb://username:password@ip:port/resultdb",
+    "message_queue": "redis://ip:6379/db",
     "webui": {
         "port": 8888,
         "username": "test",
@@ -268,6 +273,10 @@ supervisorctl status
 supervisorctl shutdown
 supervisorctl stop pyspider
 ```
+
+#### 分布式部署
+
+<http://www.jianshu.com/p/8eb248697475>
 
 ## 5. 实例
 

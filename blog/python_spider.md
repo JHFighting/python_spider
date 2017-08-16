@@ -73,6 +73,11 @@ text = r.text.encode(r.encoding).decode("gb2312")
 ![](img/re.png)
 
 
+#### 实例
+
+[Demo 1](https://github.com/JHFighting/python_spider/blob/master/Spider/qiushi_baike.py)
+
+抓取糗事百科数据
 
 ### 5. 学习资料
 
